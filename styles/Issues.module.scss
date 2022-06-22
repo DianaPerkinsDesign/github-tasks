@@ -1,0 +1,23 @@
+// width of selects
+$max-width: 300px;
+$width: 200px;
+
+.parent {
+  display: block;
+}
+
+.titlebar {
+  background: $titlebar;
+  width: 100%;
+  height: 55px;
+
+  display: flex;
+}
+
+:export {
+  titlebarInteractive: $titlebar-interactive;
+  c4purple: $c-4-purple;
+  titlebar: $titlebar;
+  highlightBlue: $highlight-blue;
+  maxWidth: $max-width;
+}

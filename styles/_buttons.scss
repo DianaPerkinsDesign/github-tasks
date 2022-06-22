@@ -1,0 +1,20 @@
+$border-radius: 3px;
+
+@mixin button-default {
+  // resets
+  margin: 0;
+  border: 0;
+
+  padding: 10px 20px;
+  border-radius: $border-radius;
+  font-size: 14px;
+  background: $c-4-purple;
+  color: $text-white;
+
+  cursor: pointer;
+
+  &:hover {
+    background: lighten($c-4-purple, 3%);
+    transform: scale(105%);
+  }
+}

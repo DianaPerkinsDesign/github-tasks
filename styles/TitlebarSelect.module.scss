@@ -1,0 +1,18 @@
+$max-width: 300px;
+$width: 200px;
+
+.leftSelect {
+  width: $width;
+}
+
+.rightSelect {
+  justify-self: flex-end;
+}
+
+:export {
+  titlebarInteractive: $titlebar-interactive;
+  c4purple: $c-4-purple;
+  titlebar: $titlebar;
+  highlightBlue: $highlight-blue;
+  maxWidth: $max-width;
+}

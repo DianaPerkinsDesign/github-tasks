@@ -1,0 +1,178 @@
+.loadingContainer {
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  .loadingSpinner {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  .loadingSpinner:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: animationRing 1.2s linear infinite;
+  }
+  @keyframes animationRing {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.table {
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  overflow-x: auto;
+  thead {
+    background: $background;
+    th {
+      padding: $padding-half;
+    }
+  }
+
+  tbody {
+    background: $table-backround;
+    tr {
+      border-bottom: 2px solid $table-border;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.06);
+      }
+    }
+  }
+  th,
+  td {
+    padding: $padding-half;
+  }
+  th {
+    text-align: left;
+  }
+  .rightAlign {
+    text-align: right;
+  }
+
+  @media only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px) {
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+    }
+
+    .rightAlign {
+      text-align: left;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    tr {
+      margin: 0 0 1rem 0;
+    }
+
+    tr:nth-child(odd) {
+      background: #ccc;
+    }
+
+    td {
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+    }
+
+    td:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      top: 0;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+    }
+
+    /*
+		This sets the name of the faux table headers for mobile equal to the value of the title attribute of each cell
+		*/
+    td[titleName]:before {
+      content: attr(titleName);
+    }
+  }
+}
+
+.issueDetails {
+  background: rgba(255, 255, 255, 0.06);
+
+  > td {
+    padding: 30px;
+    box-sizing: border-box;
+  }
+}
+
+.issueTitle {
+  font-size: 20px;
+  margin: 0;
+}
+
+.labelList {
+  padding: 0;
+  margin: 30px 0 30px;
+  li {
+    display: inline-block;
+    span {
+      border-width: 2px;
+      border-style: solid;
+      padding: 5px 20px;
+      margin-right: 5px;
+      border-radius: 20px; // must be pixels, not percentage. Percentage takes into account the width of the element, so it'll make a weird ellipse instead of a pill.
+    }
+  }
+}
+
+.titleHolder {
+  display: flex;
+  justify-content: space-between;
+}
+
+.issueBody {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  h1 {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+
+  pre {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 20px;
+    border-radius: 3px;
+  }
+
+  p {
+    opacity: 0.7;
+  }
+}

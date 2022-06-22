@@ -1,0 +1,59 @@
+.sidebar {
+  background: $sidebar;
+  padding-top: 5px;
+}
+
+.issuesContainer {
+  list-style-type: none;
+  padding: 20px;
+}
+
+.lineNumber {
+  font-size: 18px;
+  margin: 0;
+  padding: 0 0 10px 0;
+  span {
+    // color: rgba(255, 255, 255, 0.4);
+    user-select: none;
+  }
+}
+
+.issues {
+  list-style-type: none;
+  margin-left: 15px;
+}
+
+.issue {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.risk {
+  margin-right: 10px;
+}
+.issueTitle {
+  padding-top: 2px;
+  font-size: 13px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.labelMarker {
+  background: red;
+  padding: 4px;
+  font-size: 11px;
+  border-radius: 3px;
+  margin-right: 5px;
+  aspect-ratio: 1/1;
+  display: flex;
+  width: 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.issueLabels {
+  background: orange;
+}

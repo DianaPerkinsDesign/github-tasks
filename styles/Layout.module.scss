@@ -1,0 +1,120 @@
+@import "./buttons";
+
+.main_wrapper {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 55px 1fr;
+  grid-template-rows: 55px 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  background: $background;
+  color: $text-white;
+}
+
+.logo {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.header {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.sidebar {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.main_content {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.logo {
+  margin: 0;
+  font-size: 15px;
+  background: $background;
+  color: $text-white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  background: $header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px $padding-half 10px 0;
+  color: $text-white;
+
+  button {
+    @include button-default;
+  }
+}
+
+.header_left {
+  display: flex;
+  max-height: 55px;
+
+  h2 {
+    padding: 0 $padding-half;
+    align-self: center;
+    font-size: 13px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    opacity: 0.8;
+  }
+
+  p {
+    font-weight: normal;
+  }
+}
+
+.sidebar {
+  width: 55px;
+  height: 100%;
+  background: $header;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    li[active="active"] a {
+      background: $c-4-purple !important;
+    }
+
+    li {
+      height: 55px;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $header;
+        width: 100%;
+        height: 100%;
+      }
+
+      a:hover {
+        background: $c-4-purple;
+      }
+    }
+  }
+}
+
+.main_content {
+  padding: $padding;
+}
+
+.pageTitle {
+  margin-bottom: 0;
+}
+
+.pageSubtitle {
+  margin-top: 5px;
+  margin-bottom: $padding;
+}
