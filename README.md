@@ -1,7 +1,6 @@
 ## Stack
 
 - Nextjs
-- Moralis
 - Scss
 
 ## Getting Started
